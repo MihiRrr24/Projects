@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Weather · Elegant Forecast</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="header">
+      <div class="brand">
+        <div class="logo">☁️</div>
+        <div class="titles">
+          <h1>Weather</h1>
+          <p class="subtitle">Beautiful multi-day forecast</p>
+        </div>
+      </div>
+
+      <div class="controls">
+        <form id="query-form" class="query" novalidate>
+          <input id="city" name="city" type="text" class="input"
+                 placeholder="Enter city (e.g., New York)" required />
+          <div class="select-wrap">
+            <select id="days" name="days" class="select" required>
+              <option value="" disabled selected>Days…</option>
+              <option value="3">3 days</option>
+              <option value="7">7 days</option>
+              <option value="10">10 days</option>
+              <option value="14">14 days</option>
+            </select>
+          </div>
+          <button class="btn" type="submit">Get Forecast</button>
+        </form>
+
+        <button id="theme-toggle" class="icon-btn" title="Toggle theme" aria-label="Toggle theme">
+          <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="currentColor"/>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <main class="content">
+      <!-- Current conditions -->
+      <section id="current" class="current card">
+        <div class="current-left">
+          <div id="current-icon" class="icon-lg"></div>
+        </div>
+        <div class="current-right">
+          <h2 id="location">—</h2>
+          <div class="condition-row">
+            <span id="condition">—</span>
+            <span class="dot">•</span>
+            <span id="temperature">—</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Forecast grid -->
+      <section>
+        <h3 class="section-title">Daily forecast</h3>
+        <div id="forecast" class="grid empty-state">
+          <div class="empty card">
+            <div class="empty-icon">🌤️</div>
+            <div class="empty-text">
+              Enter a city and select the number of days, then hit <strong>Get Forecast</strong>.
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>Built with ❤️ — consumes <code>/weather/forecast</code> from your Spring service.</span>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
