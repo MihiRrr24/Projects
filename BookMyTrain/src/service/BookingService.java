@@ -1,3 +1,9 @@
+package service;
+
+import Entity.Ticket;
+import Entity.Train;
+import Entity.User;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -49,7 +55,7 @@ public class BookingService {
                 }
             }
         }
-        System.out.println("Train ID not found");
+        System.out.println("Entity.Train ID not found");
         return null;
     }
 
@@ -78,12 +84,12 @@ public class BookingService {
                 Train train=ticket.getTrain();
                 train.cancelSeats(ticket.getSeatBooked());
                 iterator.remove();
-                System.out.println("Ticket "+ticketId +" cancelled Successfully");
+                System.out.println("Entity.Ticket "+ticketId +" cancelled Successfully");
                 return true;
             }
         }
 
-        System.out.println("Ticket not found or does not belong to current user");
+        System.out.println("Entity.Ticket not found or does not belong to current user");
         return false;
     }
 

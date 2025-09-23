@@ -1,3 +1,5 @@
+package Entity;
+
 public class Train {
     private int trainId;
     private String name;

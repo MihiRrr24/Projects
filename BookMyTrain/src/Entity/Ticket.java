@@ -1,3 +1,5 @@
+package Entity;
+
 public class Ticket {
     // just like pnr every ticket has id
     private int ticketId;
