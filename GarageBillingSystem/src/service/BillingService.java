@@ -12,12 +12,12 @@ public class BillingService {
 
     public void createInvoice(int customerId, int vehicleId, List<Integer> serviceIds) throws SQLException
     {
-        String sids = "";
+        StringBuilder sids = new StringBuilder();
         for(int serviceId:serviceIds)
         {
-            sids+=serviceId;
+            sids.append(serviceId);
         }
-        invoiceService.addInvoice(new Invoice(0, customerId, vehicleId, Integer.parseInt(sids)));
+        invoiceService.addInvoice(new Invoice(0, customerId, vehicleId, Integer.parseInt(sids.toString())));
         System.out.println("Invoice generated successfully.....");
     }
 
