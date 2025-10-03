@@ -29,7 +29,7 @@ public class UserService {
     {
         if(!userMap.containsKey(username))
         {
-            System.out.println("No Entity.User Found with this username");
+            System.out.println("No User Found with this username");
             return false;
         }
 
